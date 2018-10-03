@@ -11,14 +11,19 @@
             robotArm.randomLevel(1, 8);
             
             // Jou instructies volgen hier
-            for (var i = 0; i < 6; i++) {
+            robotArm.grab();
+            var color = robotArm.scan();
+            while (color !== null) {
                 robotArm.grab();
-                for (var a = 0; a < 9; a++) {
-                    robotArm.moveRight();
-                }
-                robotArm.drop();
-                for (var b = 0; b < 9; b++) {
-                    robotArm.moveLeft();
+                color = robotArm.scan();
+                if (color !== null) {
+                    for (var z = 0; z < 9 ; z++) {
+                        robotArm.moveRight();
+                    }
+                    robotArm.drop();
+                    for (var i = 0; i < 9; i++) {
+                        robotArm.moveLeft();
+                    }
                 }
             }
 
