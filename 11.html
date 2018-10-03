@@ -14,7 +14,7 @@
             for (var i = 0; i < 9; i++) {
                 robotArm.moveRight();
                 }
-            for (var i = 0; i < 9; i++) {
+            for (var i = 0; i < 8; i++) {
                 robotArm.moveLeft();
                 robotArm.grab();
                 var log = robotArm.scan();
@@ -26,8 +26,6 @@
                 robotArm.drop();
                 }
             }
-
-
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>

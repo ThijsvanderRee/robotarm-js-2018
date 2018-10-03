@@ -11,15 +11,24 @@
             robotArm.loadLevel("exercise 12");
             
             // Jou instructies volgen hier
-            for (var i = 0; i < 8; i++) {
-                robotArm.moveRight();
-            }
-            robotArm.grab();
-            color = robotArm.scan();
-            if (log == "red") {
-                robotArm.drop();
-            } else {
-                robotArm.moveRight();
+            for (var x = 0; x < 9; x++) {
+                for (var i = 0; i < 8; i++) {
+                    robotArm.moveRight();
+                }
+                for (var a = 0; a < 9; a++) {
+                    robotArm.grab();
+                var log = robotArm.scan();
+                if  (log == "red") {
+                    robotArm.moveRight();
+                    robotArm.drop();
+                for (var i = 0; i < 2; i++) {
+                    robotArm.moveLeft();
+                }
+                    } else {
+                    robotArm.drop();
+                    robotArm.moveLeft();
+                    }
+                }
             }
 
             // De door jou opgegeven instructies uitvoeren
