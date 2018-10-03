@@ -11,7 +11,16 @@
             robotArm.randomLevel(1, 8);
             
             // Jou instructies volgen hier
-            
+            for (var i = 0; i < 6; i++) {
+                robotArm.grab();
+                for (var a = 0; a < 9; a++) {
+                    robotArm.moveRight();
+                }
+                robotArm.drop();
+                for (var b = 0; b < 9; b++) {
+                    robotArm.moveLeft();
+                }
+            }
 
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
